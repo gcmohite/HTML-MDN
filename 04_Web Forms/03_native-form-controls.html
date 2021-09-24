@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Native Form Controls</title>
+
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      p {
+        margin-bottom: 2px;
+        font-weight: bold;
+      }
+
+      input {
+        margin-top: 0;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+        text-decoration-line: underline;
+      }
+
+      fieldset {
+        width: 300px;
+      }
+
+      li {
+        list-style-type: none;
+        line-height: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Basic Native Form Controls</h1>
+
+    <h2>Text Input fields</h2>
+
+    <p>Single line</p>
+    <input
+      type="text"
+      id="comment"
+      name="comment"
+      placeholder="I'm a text field"
+    />
+
+    <p>Password field</p>
+    <input type="password" id="pwd" name="pwd" />
+
+    <h2>Checkboxes</h2>
+    <form>
+      <fieldset>
+        <legend>Select the vegetables you like</legend>
+        <ul>
+          <li>
+            <label for="carrots">Carrots</label>
+            <input
+              type="checkbox"
+              name="vegetable"
+              id="carrots"
+              value="carrots"
+              checked
+            />
+          </li>
+          <li>
+            <label for="peas">Peas</label>
+            <input type="checkbox" name="vegetables" id="peas" value="peas" />
+          </li>
+          <li>
+            <label for="cabbage">Cabbage</label>
+            <input
+              type="checkbox"
+              id="cabbage"
+              name="vegetable"
+              value="cabbage"
+            />
+          </li>
+        </ul>
+      </fieldset>
+    </form>
+
+    <h2>Radio buttons</h2>
+    <form>
+      <fieldset>
+        <legend>What is your favorite meal?</legend>
+        <ul>
+          <li>
+            <input type="radio" name="meal" id="soup" value="soup" checked />
+            <label for="soup">Soup</label>
+          </li>
+          <li>
+            <input type="radio" name="meal" id="curry" value="curry" />
+            <label for="curry">Curry</label>
+          </li>
+          <li>
+            <input type="radio" name="meal" id="pizza" value="pizza" />
+            <label for="pizza">Pizza</label>
+          </li>
+        </ul>
+      </fieldset>
+    </form>
+
+    <h2>Buttons</h2>
+    <ul>
+      <li>
+        <button type="submit">This is a <strong>submit button</strong></button>
+      </li>
+      <li>
+        <button type="reset">This is a <strong>reset button</strong></button>
+      </li>
+      <li>
+        <button type="button">
+          This is an <strong>anonymous button</strong>
+        </button>
+      </li>
+    </ul>
+
+    <p>Image button</p>
+    <input type="image" src="03_subscribe-button.png" alt="subscribe" />
+
+    <h2>File picker</h2>
+    <input type="file" name="file" id="file" accept="image/*" multiple />
+  </body>
+</html>
