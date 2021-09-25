@@ -5,6 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML5 Input Types</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      label,
+      input {
+        display: inline-block;
+      }
+
+      input {
+        margin: 0 10px 10px 0;
+      }
+
+      label {
+        font-family: monospace;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <h1>HTML5 input types</h1>
+
+    <h2>E-mail input field</h2>
+    <label for="email">Email: </label>
+    <input type="email" id="email" name="email" multiple />
+
+    <h2>Search field</h2>
+    <input type="search" name="search" id="search" />
+    <button type="submit">Search</button>
+
+    <h2>Numeric field</h2>
+    <label for="age">Select your age: </label>
+    <input type="number" name="age" id="age" min="18" max="99" step="1" />
+    <br />
+    <label for="scale">Choose a scaling constant(0 to 1): </label>
+    <input type="number" name="scale" id="scale" min="0" max="1" step="0.01" />
+
+    <h2>Slider control</h2>
+    <label for="price">Choose a maximum house price: </label>
+    <input
+      type="range"
+      name="price"
+      id="price"
+      min="50000"
+      max="500000"
+      step="100"
+      value="250000"
+    />
+    <output class="price-output" for="price"></output>
+
+    <h2>Date and time pickers</h2>
+    <label for="datetime">datetime-local:</label>
+    <input type="datetime-local" name="datetime" id="datetime" /> <br />
+    <label for="month">month: </label>
+    <input type="month" name="month" id="month" />
+    <label for="week">week: </label>
+    <input type="week" name="week" id="week" />
+    <label for="time">time</label>
+    <input type="time" name="" id="" /> <br />
+    <label for="myDate"
+      >contraining date/time values with 'min' and 'max':
+    </label>
+    <input
+      type="date"
+      name="myDate"
+      id="myDate"
+      min="2021-01-01"
+      max="2030-12-31"
+    />
+
+    <h1>Other Form Controls</h1>
+
+    <h2>Multi-line text fields</h2>
+    <label for="msg">Your message:</label>
+    <p><textarea cols="30" rows="8" id="msg"></textarea></p>
+
+    <h2>Drop-down controls</h2>
+  </body>
 </html>
