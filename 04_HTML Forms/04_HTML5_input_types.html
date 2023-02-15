@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 Input Types</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="email">Enter your email: </label>
+      <input type="email" name="usr_email" id="email" />
+
+      <p>
+        <label for="search">Search: </label>
+        <input type="search" name="usr-search" id="search" />
+      </p>
+
+      <p>
+        <label for="num">Enter your number: </label>
+        <input
+          type="number"
+          name="usr-num"
+          id="num"
+          step="0.01"
+          min="0"
+          max="1"
+        />
+      </p>
+
+      <p>
+        <label for="price">Choose a maximum house price: </label>
+        <input
+          type="range"
+          name="price"
+          id="price"
+          min="1000"
+          max="100000"
+          step="100"
+          v
+        />
+      </p>
+
+      <p>
+        <label for="date">Choose a date and time: </label>
+        <input type="datetime-local" name="date" id="date" />
+        <input type="month" name="date" id="date" />
+        <input type="time" name="date" id="date" />
+        <input type="week" name="date" id="date" />
+      </p>
+
+      <p>
+        <label for="mydate">When are you available? </label>
+        <input
+          type="date"
+          name="mydate"
+          id="mydate"
+          min="2023-02-12"
+          max="2023-05-31"
+          step="7"
+        />
+      </p>
+
+      <p>
+        <label for="color">Pick your favourite colour: </label>
+        <input type="color" name="color" id="color" />
+      </p>
+    </form>
+  </body>
+</html>

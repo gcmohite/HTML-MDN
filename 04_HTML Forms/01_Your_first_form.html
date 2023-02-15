@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your First Form</title>
+    <style>
+      form {
+        width: 50vw;
+        margin: 0 auto;
+        /* background-color: rgb(99, 212, 212); */
+        padding: 1em;
+        border-radius: 1em;
+        border: 1px solid #cccc;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      form li + li {
+        margin-top: 1em;
+      }
+
+      label {
+        display: inline-block;
+        width: 15%;
+        text-align: right;
+      }
+
+      input,
+      textarea {
+        font: 1em sans-serif;
+
+        /* uniform text field size */
+        width: 300px;
+        box-sizing: border-box;
+
+        /* match form field borders */
+        border: 1px solid #999;
+        border-radius: 2px;
+      }
+
+      input:focus,
+      textarea:focus {
+        border: 2px solid red;
+      }
+
+      textarea {
+        /* align multiline text fields with their labels */
+        vertical-align: top;
+
+        height: 5em;
+      }
+
+      .button {
+        /* button aligned to the text fields */
+        padding-left: calc(15% + 5px);
+      }
+
+      button {
+        width: 300px;
+        height: 2.5em;
+        border: none;
+        border-radius: 2px;
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/04_HTML Forms/01_Your_first_form.html" method="post">
+      <ul>
+        <li>
+          <label for="name">Name: </label>
+          <input type="text" id="name" name="user_name" />
+        </li>
+        <li>
+          <label for="email"> Email: </label>
+          <input type="email" name="user_email" id="email" />
+        </li>
+        <li>
+          <label for="message">Message: </label>
+          <textarea name="msg" id="message"></textarea>
+        </li>
+        <li class="button">
+          <button type="submit">SUBMIT</button>
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Other Form Controls</title>
+
+    <style>
+      form {
+        width: 400px;
+        /* margin: 0 auto; */
+        border: 1px solid;
+        padding: 1em;
+        border-radius: 5px;
+      }
+      textarea,
+      select {
+        vertical-align: top;
+        /* height: 5em; */
+      }
+
+      label {
+        display: inline-block;
+        width: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <label for="msg">Enter your message: </label>
+      <textarea name="msg" id="msg" cols="30" rows="3" wrap></textarea>
+      <br />
+      <br />
+
+      <p>
+        <label for="simple">Select an option: </label>
+        <select name="simple" id="simple">
+          <option value="">Banana</option>
+          <option value="">Cherry</option>
+          <option value="">Lemon</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="simple">Select multiple options: </label>
+        <select name="simple" id="simple" multiple>
+          <optgroup label="fruits">
+            <option value="">Banana</option>
+            <option value="">Cherry</option>
+            <option value="">Lemon</option>
+          </optgroup>
+          <optgroup label="vegetables">
+            <option value="">cabbage</option>
+            <option value="" selected>capsicum</option>
+            <option value="">dill</option>
+          </optgroup>
+        </select>
+      </p>
+
+      <p>
+        <label for="myList">What's your fruit?</label>
+        <input type="text" name="myList" id="myList" list="mySuggestion" />
+        <datalist id="mySuggestion">
+          <option>Apple</option>
+          <option>Banana</option>
+          <option>Blackberry</option>
+          <option>Blueberry</option>
+          <option>Lemon</option>
+          <option>Lychee</option>
+          <option>Peach</option>
+          <option>Pear</option>
+          <option>Mango</option>
+          <option>Maple</option>
+        </datalist>
+      </p>
+
+      <p>
+        <label for="num">Choose a number (0 to 50): </label>
+        <input
+          type="range"
+          name="num"
+          id="num"
+          list="myRange"
+          min="0"
+          max="50"
+        />
+        <datalist id="myRange">
+          <option value="0"></option>
+          <option value="10"></option>
+          <option value="20"></option>
+          <option value="30"></option>
+          <option value="40"></option>
+          <option value="50"></option>
+        </datalist>
+      </p>
+
+      <progress max="100" value="75">75/100</progress>
+
+      <p>
+        <meter
+          min="0"
+          max="100"
+          value="100"
+          low="33"
+          high="66"
+          optimum="50"
+        ></meter>
+      </p>
+    </form>
+  </body>
+</html>

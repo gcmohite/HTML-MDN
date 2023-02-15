@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Structuring a Web Form</title>
+
+    <style>
+      :root {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      form {
+        margin: 0 auto;
+        width: 400px;
+        padding: 1em;
+        border: 1px solid #ccc;
+        border-radius: 1em;
+      }
+
+      div + div {
+        margin-top: 1em;
+      }
+
+      label span {
+        display: inline-block;
+        width: 120px;
+        text-align: right;
+      }
+
+      input,
+      textarea {
+        font: 1em sans-serif;
+        width: 250px;
+        box-sizing: border-box;
+        border: 1px solid #999;
+      }
+
+      input[type='checkbox'],
+      input[type='radio'] {
+        width: auto;
+        border: none;
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: #000;
+      }
+
+      textarea {
+        vertical-align: top;
+        height: 5em;
+        resize: vertical;
+      }
+
+      fieldset {
+        width: 250px;
+        box-sizing: border-box;
+        /* margin: 0 auto; */
+        border: 1px solid #999;
+      }
+
+      fieldset + fieldset {
+        margin-top: 1em;
+      }
+
+      button {
+        margin: 20px 0 0 124px;
+      }
+
+      label {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/04_HTML Forms/02_form_structuring.html" method="post">
+      <h1>Payment form</h1>
+      <p>
+        Required fields are followed by
+        <strong><span aria-label="required">*</span></strong>
+      </p>
+
+      <section>
+        <h2>Contact Information</h2>
+
+        <fieldset>
+          <legend>Title</legend>
+          <ul>
+            <li><input type="radio" name="king" id="title" />King</li>
+            <li><input type="radio" name="queen" id="title" />Queen</li>
+            <li><input type="radio" name="joker" id="title" />Joker</li>
+          </ul>
+        </fieldset>
+
+        <fieldset>
+          <ul>
+            <li>
+              <label for="name"
+                >Name: <span aria-label="required">*</span
+                ><input type="text" name="name" id="usr_name" />
+              </label>
+            </li>
+            <li>
+              <label for="email"
+                >Email: <span aria-label="required">*</span
+                ><input type="email" name="usr_email" id=""
+              /></label>
+            </li>
+            <li>
+              <label for="pwd"
+                >Password: <span aria-label="required">*</span
+                ><input type="password" name="pwd" id="usr_pwd"
+              /></label>
+            </li>
+          </ul>
+        </fieldset>
+      </section>
+
+      <section>
+        <h2>Payment Information</h2>
+
+        <p>
+          <label for="card"
+            ><span>Card type:</span>
+            <select name="usr_card" id="card">
+              <option value="none"></option>
+              <option value="visa">Visa</option>
+              <option value="mc">Mastercard</option>
+              <option value="amex">Amex</option>
+            </select>
+          </label>
+        </p>
+        <p>
+          <label for="number"
+            >Card number: <span aria-label="required">*</span
+            ><input type="tel" name="usr_card" id="number"
+          /></label>
+        </p>
+        <p>
+          <label for="expiration">
+            <span>Expiration date:</span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input
+            type="text"
+            id="expiration"
+            required="true"
+            placeholder="MM/YY"
+            pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$"
+          />
+        </p>
+      </section>
+
+      <section>
+        <p>
+          <button type="submit">Validate the payment</button>
+        </p>
+      </section>
+    </form>
+  </body>
+</html>
