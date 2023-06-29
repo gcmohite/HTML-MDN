@@ -39,14 +39,15 @@
           step="100"
           v
         />
+        <output for="price" id="price-display"></output>
       </p>
 
       <p>
         <label for="date">Choose a date and time: </label>
-        <input type="datetime-local" name="date" id="date" />
-        <input type="month" name="date" id="date" />
-        <input type="time" name="date" id="date" />
-        <input type="week" name="date" id="date" />
+        <input type="datetime-local" name="date" id="date-time" />
+        <input type="month" name="date" id="month" />
+        <input type="time" name="date" id="time" />
+        <input type="week" name="date" id="week" />
       </p>
 
       <p>
@@ -56,8 +57,8 @@
           name="mydate"
           id="mydate"
           min="2023-02-12"
-          max="2023-05-31"
-          step="7"
+          max="2023-08-31"
+          step="2"
         />
       </p>
 
@@ -67,4 +68,13 @@
       </p>
     </form>
   </body>
+  <script>
+    const price = document.querySelector('#price');
+    const priceDisplay = document.querySelector('#price-display');
+    // priceDisplay.textContent = price.value;
+
+    price.addEventListener('input', () => {
+      priceDisplay.textContent = price.value;
+    });
+  </script>
 </html>
