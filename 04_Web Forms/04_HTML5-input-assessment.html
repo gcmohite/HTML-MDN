@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 Inputs Assessment</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      ul {
+        padding: 5px;
+      }
+
+      li {
+        list-style-type: none;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Task 1</h1>
+    <form>
+      <h2>Edit your preferences</h2>
+      <ul>
+        <li>
+          <label for="email">Email: </label>
+          <input type="email" name="email" id="email" />
+        </li>
+        <li>
+          <label for="url">Website: </label>
+          <input type="url" name="url" id="url" />
+        </li>
+        <li>
+          <label for="phone">Phone number: </label>
+          <input type="tel" name="phone" id="phone" />
+        </li>
+        <li>
+          <label for="color">Favorite color: </label>
+          <input type="color" name="color" id="color" />
+        </li>
+        <li><button type="submit">Update preferences</button></li>
+      </ul>
+    </form>
+
+    <h1>Task 2</h1>
+    <form>
+      <ul>
+        <li>
+          <label for="max-invite">Select maximum number of invitations</label>
+          <input
+            type="range"
+            name="invites"
+            id="max-invite"
+            class="invite-output"
+            min="1"
+            max="30"
+            value="10"
+          />
+          <output class="invite-output" for="max-invite"></output>
+        </li>
+        <li>
+          <button>Submit</button>
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>

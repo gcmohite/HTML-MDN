@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Structure Assessment</title>
+
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      form {
+        width: 50vw;
+        margin: 20px auto;
+        border: 1px solid;
+        border-radius: 1em;
+      }
+
+      fieldset {
+        margin: 10px;
+        border-radius: 5px;
+      }
+
+      span:hover {
+        color: green;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Personal details</legend>
+        <p>
+          <label for="name"
+            ><span>Name:</span> <br />
+            <input type="text" id="name" name="name" />
+          </label>
+        </p>
+        <p>
+          <label for="age"
+            ><span>Age:</span> <br />
+            <input type="number" id="age" name="age" />
+          </label>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Comment information</legend>
+        <p>
+          <label for="comment"
+            ><span>Comment:</span> <br />
+            <input type="text" id="comment" name="comment" />
+          </label>
+        </p>
+        <p>
+          <label for="email"
+            ><span>Email:</span> <br />
+            <input type="email" id="email" name="email" />
+          </label>
+        </p>
+      </fieldset>
+    </form>
+  </body>
+</html>
