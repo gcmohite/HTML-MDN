@@ -13,8 +13,6 @@ const slider = document.querySelector('#slider');
 const sliderReading = document.querySelector('output');
 
 slider.addEventListener('input', function () {
-  const thumb = window.getComputedStyle(slider, '::after');
-  console.log(thumb);
   // console.log(this);
   sliderReading.textContent = this.value;
 
@@ -30,7 +28,3 @@ slider.addEventListener('input', function () {
   }
 });
 console.log(slider.value);
-
-const thumb = window.getComputedStyle(slider);
-
-console.log(thumb.height);

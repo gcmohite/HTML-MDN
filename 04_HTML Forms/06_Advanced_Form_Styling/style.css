@@ -157,6 +157,7 @@ input[type='radio']:checked::before {
 #slider {
   background-color: black;
   height: 4px;
+  height: 2px;
   padding: 0;
   outline: 1px solid transparent;
   transform: translateY(-4px);
@@ -176,4 +177,7 @@ input[type='radio']:checked::before {
 
 .addcolor {
   background-color: rgb(179, 29, 29);
+  background-color: teal;
+  padding: 0 5px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
