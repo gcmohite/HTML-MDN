@@ -1,0 +1,179 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  --input-width: 250px;
+  font-size: 100%;
+}
+
+form {
+  width: 60vw;
+  margin: 0 auto;
+  /* background-color: #ccc; */
+}
+
+input,
+select {
+  appearance: none;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+input[type='search'],
+input[type='text'],
+input[type='password'],
+input[type='datetime-local'],
+textarea {
+  width: var(--input-width);
+}
+
+/* Search box styling */
+
+input[type='search'] {
+  border-radius: 1000px;
+  outline: none;
+  border: 0.5px solid #ccc;
+  padding: 0.25rem 1rem;
+  position: relative;
+}
+
+input[type='search']:focus {
+  border: 0.5px solid green;
+  transition: border 0.2s;
+}
+
+input[type='search']::-webkit-search-cancel-button {
+  position: absolute;
+  height: 100%;
+  /* width: 1.5rem; */
+  right: -10rem;
+  top: 50%;
+}
+
+input[type='search']:focus::-webkit-search-cancel-button {
+  right: 0.6rem;
+  transition: all 0.2s;
+}
+
+/* Radio button and checkbox styling */
+#checkbox,
+input[type='radio'] {
+  display: inline-block;
+  /* height and width increased just for demonstration. dont change, as it will cause the ::before elements to become misaligned*/
+  width: 100px;
+  height: 100px;
+  /* background-color: teal; */
+  vertical-align: text-top;
+  border: 2px solid;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type='radio'] {
+  border-radius: 1000px;
+}
+
+#checkbox::before {
+  content: '✔';
+  position: absolute;
+  /* inset: 0; */
+  bottom: -0.6rem;
+  left: 0.6rem;
+  font-size: 100px;
+  color: green;
+  visibility: hidden;
+}
+
+#checkbox:checked::before {
+  visibility: visible;
+}
+
+input[type='radio']::before {
+  content: '●';
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 5px)) scale(10);
+  color: blue;
+  visibility: hidden;
+}
+
+input[type='radio']:checked::before {
+  visibility: visible;
+}
+
+#toggle {
+  /* display: inline-block; */
+  height: 1.5em;
+  width: 3em;
+  border: 2px solid;
+  border-radius: 1000px;
+  position: relative;
+  transform: translateY(0.5em);
+}
+
+#toggle::before {
+  content: '●';
+  position: absolute;
+  transform: scale(2.6) translateX(2px);
+}
+
+#toggle:checked {
+  background-color: teal;
+}
+
+#toggle:checked::before {
+  transform: scale(2.6) translateX(11px);
+  transition: all 0.3s;
+  color: white;
+}
+
+#selectbox {
+  margin-top: 1.5rem;
+  position: relative;
+}
+
+#foods {
+  /* margin-top: 2rem; */
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  box-shadow: inset 1px 1px 3px #ccc;
+  position: relative;
+}
+
+#selectbox::after {
+  content: '▼';
+  font-size: 1rem;
+  top: 1.7rem;
+  right: 10px;
+  position: absolute;
+}
+
+.slider {
+  margin-top: 1rem;
+}
+
+#slider {
+  background-color: black;
+  height: 4px;
+  padding: 0;
+  outline: 1px solid transparent;
+  transform: translateY(-4px);
+  transition: all 0.2s;
+}
+
+#slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 2px;
+  height: 1rem;
+  background-color: black;
+  padding: 0 5px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  /* cursor: w-resize; */
+  cursor: pointer;
+}
+
+.addcolor {
+  background-color: rgb(179, 29, 29);
+}
