@@ -1,0 +1,194 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+#form1 input {
+  appearance: none;
+  border: 5px solid;
+  outline: none; }
+
+#form1 input:invalid {
+  border: 5px solid red; }
+
+#form1 input:valid {
+  border: 5px solid green; }
+
+form#required {
+  margin: 2rem auto;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  position: relative; }
+  form#required fieldset {
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    border: 1px solid darkgray; }
+    form#required fieldset p {
+      font-size: 0.8rem; }
+    form#required fieldset div {
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 0.3rem; }
+      form#required fieldset div .required-label {
+        order: 1; }
+        form#required fieldset div .required-label:before {
+          content: 'required';
+          display: inline-block;
+          background-color: black;
+          color: white;
+          font-size: 0.7rem;
+          padding: 0.2rem 0.5rem 0.3rem; }
+      form#required fieldset div .pattern-check {
+        order: 1; }
+        form#required fieldset div .pattern-check:before {
+          content: '\n';
+          display: inline-block;
+          color: white;
+          font-size: 0.7rem;
+          padding: 0.2rem 0.5rem 0.3rem; }
+    form#required fieldset input {
+      order: 2; }
+    form#required fieldset input:valid + .required-label:before,
+    form#required fieldset input[type='email']:valid + .pattern-check:before {
+      content: '\2713';
+      background-color: green;
+      color: white;
+      border-radius: 1000px;
+      scale: 0.8;
+      margin-bottom: -2px; }
+    form#required fieldset input:out-of-range + .required-label:before {
+      content: 'Outside allowable value range';
+      background-color: red; }
+  form#required legend {
+    background-color: black;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 auto; }
+  form#required input,
+  form#required label,
+  form#required button {
+    display: block; }
+  form#required input {
+    appearance: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: 100%; }
+  form#required button {
+    width: 15rem;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    font-size: 100%;
+    font-family: inherit;
+    outline-color: transparent;
+    border: none;
+    border-radius: 5px;
+    background-color: teal;
+    color: white;
+    font-weight: bolder;
+    box-shadow: 1px 2px 2px #333; }
+    form#required button:hover {
+      background-color: green;
+      transition: all 0.2s; }
+    form#required button:active {
+      box-shadow: none; }
+  form#required input:required {
+    border: 1px solid black; }
+  form#required input:optional {
+    border: 1px solid silver; }
+
+form#address {
+  margin: 2rem auto;
+  max-width: 600px;
+  position: relative;
+  padding: 2rem;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+  position: relative; }
+  form#address::before {
+    content: 'Address form';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    font-weight: bold; }
+  form#address fieldset {
+    padding: 1rem 2rem;
+    border-radius: 5px; }
+    form#address fieldset:not(:last-child) {
+      margin-bottom: 1.5rem; }
+  form#address legend {
+    background-color: #333;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 80%; }
+  form#address div {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 6rem; }
+    form#address div:not(:last-child) {
+      margin-bottom: 1rem; }
+    form#address div input {
+      width: 250px;
+      appearance: none;
+      outline: none;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 0.5rem;
+      font-family: inherit;
+      font-size: 100%; }
+      form#address div input[type='text']:disabled {
+        background: #eee; }
+    form#address div .disabled-label {
+      color: #aaa; }
+  form#address #billing-checkbox {
+    align-self: flex-end;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; }
+    form#address #billing-checkbox:checked {
+      background-color: green; }
+    form#address #billing-checkbox:checked::before {
+      content: '\2713';
+      color: white;
+      transform: translateY(-1px); }
+  form#address button {
+    width: 15rem;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    font-size: 100%;
+    font-family: inherit;
+    border: none;
+    border-radius: 5px;
+    background-color: teal;
+    color: white;
+    font-weight: bolder;
+    box-shadow: 1px 2px 2px #333;
+    transition: all 0.2s; }
+    form#address button:hover {
+      background-color: green;
+      transition: all 0.2s;
+      transform: scale(1.2); }
+    form#address button:active {
+      box-shadow: none; }
+    form#address button:focus-visible {
+      transform: scale(1.2);
+      outline-offset: 0.25rem; }

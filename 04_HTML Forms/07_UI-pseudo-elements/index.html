@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI pseudo-classes</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <form action="#" id="form1">
+      <input type="text" name="" id="" required placeholder="Name" />
+      <input type="email" name="" id="" required placeholder="Email" />
+      <!-- prettier-ignore -->
+      <input
+        type="number" name="" id="" min="18" max="130"
+        placeholder="age(18+)" style="width: 150px"
+      />
+      <button type="submit">Submit</button>
+    </form>
+
+    <form action="#" id="required">
+      <fieldset>
+        <p>Required fields are labeled with "required".</p>
+        <legend>Feedback form</legend>
+        <div>
+          <label for="fname">First name: </label>
+          <input id="fname" name="fname" type="text" required />
+          <span class="required-label"></span>
+        </div>
+        <div>
+          <label for="lname">Last name: </label>
+          <input id="lname" name="lname" type="text" required />
+          <span class="required-label"></span>
+        </div>
+        <div>
+          <label for="age">Age (must be above 12)</label>
+          <!-- prettier-ignore -->
+          <input type="number" name="age" id="age" min="12" max="130" required/>
+          <span class="required-label"></span>
+        </div>
+        <div>
+          <label for="email">
+            Email address (include if you want a response):
+          </label>
+          <input id="email" name="email" type="email" />
+          <span class="pattern-check"></span>
+        </div>
+        <div><button type="submit">Submit</button></div>
+      </fieldset>
+    </form>
+
+    <form action="#" id="address">
+      <fieldset id="shipping">
+        <legend>Shipping address</legend>
+        <div>
+          <label for="name1">Name: </label>
+          <input
+            id="name1"
+            name="name1"
+            type="text"
+            required
+            placeholder="Name"
+          />
+        </div>
+        <div>
+          <label for="address1">Address: </label>
+          <input id="address1" name="address1" type="text" required />
+        </div>
+        <div>
+          <label for="pcode1">Zip/postal code: </label>
+          <input id="pcode1" name="pcode1" type="text" required />
+        </div>
+      </fieldset>
+      <fieldset id="billing">
+        <legend>Billing address</legend>
+        <div>
+          <label for="billing-checkbox">Same as shipping address:</label>
+          <input type="checkbox" id="billing-checkbox" checked />
+        </div>
+        <div>
+          <label for="name" class="billing-label disabled-label">Name: </label>
+          <input id="name" name="name" type="text" disabled required />
+        </div>
+        <div>
+          <label for="address2" class="billing-label disabled-label">
+            Address:
+          </label>
+          <input id="address2" name="address2" type="text" disabled required />
+        </div>
+        <div>
+          <label for="pcode2" class="billing-label disabled-label">
+            Zip/postal code:
+          </label>
+          <input id="pcode2" name="pcode2" type="text" disabled required />
+        </div>
+      </fieldset>
+
+      <div><button>Submit</button></div>
+    </form>
+  </body>
+</html>

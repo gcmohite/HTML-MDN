@@ -1,0 +1,276 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#form1 {
+  input {
+    appearance: none;
+    border: 5px solid;
+    outline: none;
+  }
+
+  input:invalid {
+    border: 5px solid red;
+  }
+
+  input:valid {
+    border: 5px solid green;
+  }
+}
+
+form#required {
+  margin: 2rem auto;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  position: relative;
+
+  fieldset {
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+
+    p {
+      font-size: 0.8rem;
+    }
+
+    div {
+      margin: 1rem 0;
+
+      // wrap contents onto new lines if the content becomes too long
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 0.3rem;
+
+      .required-label {
+        order: 1;
+
+        &:before {
+          content: 'required';
+          display: inline-block;
+          background-color: black;
+          color: white;
+          font-size: 0.7rem;
+          padding: 0.2rem 0.5rem 0.3rem;
+        }
+      }
+
+      .pattern-check {
+        order: 1;
+
+        &:before {
+          content: '\n';
+          display: inline-block;
+          color: white;
+          font-size: 0.7rem;
+          padding: 0.2rem 0.5rem 0.3rem;
+        }
+      }
+    }
+
+    input {
+      order: 2;
+    }
+
+    input:valid + .required-label:before,
+    input[type='email']:valid + .pattern-check:before {
+      content: '\2713';
+      background-color: green;
+      color: white;
+      border-radius: 1000px;
+      scale: 0.8;
+      margin-bottom: -2px;
+    }
+
+    input:out-of-range + .required-label:before {
+      content: 'Outside allowable value range';
+      background-color: red;
+    }
+  }
+
+  legend {
+    background-color: black;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  input,
+  label,
+  button {
+    display: block;
+  }
+
+  input {
+    appearance: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: 100%;
+  }
+
+  button {
+    width: 15rem;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    font-size: 100%;
+    font-family: inherit;
+    outline-color: transparent;
+    border: none;
+    border-radius: 5px;
+    background-color: teal;
+    color: white;
+    font-weight: bolder;
+    box-shadow: 1px 2px 2px #333;
+
+    &:hover {
+      background-color: green;
+      transition: all 0.2s;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+
+  input:required {
+    border: 1px solid black;
+  }
+
+  input:optional {
+    border: 1px solid silver;
+  }
+}
+
+form#address {
+  margin: 2rem auto;
+  max-width: 600px;
+  position: relative;
+  padding: 2rem;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+  position: relative;
+
+  &::before {
+    content: 'Address form';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    font-weight: bold;
+  }
+
+  fieldset {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  legend {
+    background-color: #333;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 80%;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 6rem;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    input {
+      width: 250px;
+      appearance: none;
+      outline: none;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 0.5rem;
+      font-family: inherit;
+      font-size: 100%;
+
+      &[type='text']:disabled {
+        background: #eee;
+      }
+    }
+
+    .disabled-label {
+      color: #aaa;
+    }
+  }
+
+  #billing {
+    &-checkbox {
+      align-self: flex-end;
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      &:checked {
+        background-color: green;
+      }
+
+      &:checked::before {
+        content: '\2713';
+        color: white;
+        transform: translateY(-1px);
+      }
+    }
+  }
+
+  button {
+    width: 15rem;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    font-size: 100%;
+    font-family: inherit;
+    // outline-color: transparent;
+    border: none;
+    border-radius: 5px;
+    background-color: teal;
+    color: white;
+    font-weight: bolder;
+    box-shadow: 1px 2px 2px #333;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: green;
+      transition: all 0.2s;
+      transform: scale(1.2);
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+
+    &:focus-visible {
+      transform: scale(1.2);
+      outline-offset: 0.25rem;
+    }
+  }
+}
