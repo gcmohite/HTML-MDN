@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client-side Form Validation</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <form action="#" id="fruit">
+      <div>
+        <label for="choose">Would you prefer banana or cherry?</label>
+        <!-- prettier-ignore -->
+        <input
+          type="text" name="i-like" id="choose"
+          required pattern="[Bb]anana|[Cc]herry" minlength="6" maxlength="6"/>
+      </div>
+      <div>
+        <label for="qty">How many would you like?</label>
+        <input type="number" name="qty" id="qty" min="1" max="10" required />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+    <h2>Form validation using Javascript</h2>
+
+    <form action="#" id="validation1">
+      <div>
+        <label for="mail">Enter your email address: </label>
+        <input type="email" name="mail" id="mail" required />
+      </div>
+      <div><button type="submit">Submit</button></div>
+    </form>
+
+    <form action="#" id="validation2" novalidate>
+      <label for="mail">Enter your email address: </label>
+      <!-- prettier-ignore -->
+      <input type="email" name="mail" id="email" required minlength="8"/>
+      <span class="error" aria-live="polite">required</span>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
